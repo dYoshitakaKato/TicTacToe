@@ -4,13 +4,12 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class MainViewModel : ViewModel()  {
 
-    private val _turn = MutableLiveData<Int>(0)
+    private val _turn = MutableLiveData(0)
     val turn: LiveData<Int> = _turn
     private val _winner:MutableLiveData<String> = MutableLiveData<String>()
     val winner: LiveData<String> = _winner
@@ -22,10 +21,8 @@ class MainViewModel : ViewModel()  {
         }
     }
 
-    fun onClick(index: Int) = onClick(index, Dispatchers.IO)
-
-    private fun onClick(index: Int, dispatcher: CoroutineDispatcher) =
-        viewModelScope.launch(dispatcher) {
+    fun onClick(index: Int) =
+        viewModelScope.launch(Dispatchers.IO) {
             if (board[index].value != "") {
                 return@launch
             }
