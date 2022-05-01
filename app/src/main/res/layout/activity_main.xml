@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="view_model"
+            type="com.example.myapplication.MainViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/button1"
+                    android:layout_width="90dp"
+                    android:layout_height="75dp"
+                    android:text="@{view_model.board.get(0)}"
+                    app:color="@{view_model.board.get(0)}"
+                    android:onTextChanged="@{() -> view_model.onChangeValue(0, view_model.turn)}"
+                    android:onClick="@{() -> view_model.onClick(0)}"/>
+
+                <Button
+                    android:id="@+id/button2"
+                    android:layout_width="90dp"
+                    android:layout_height="75dp"
+                    android:text="@{view_model.board.get(1)}"
+                    app:color="@{view_model.board.get(1)}"
+                    android:onTextChanged="@{() -> view_model.onChangeValue(1, view_model.turn)}"
+                    android:onClick="@{() -> view_model.onClick(1)}"/>
+
+                <Button
+                    android:id="@+id/button3"
+                    android:layout_width="90dp"
+                    android:layout_height="75dp"
+                    android:text="@{view_model.board.get(2)}"
+                    app:color="@{view_model.board.get(2)}"
+                    android:onTextChanged="@{() -> view_model.onChangeValue(2, view_model.turn)}"
+                    android:onClick="@{() -> view_model.onClick(2)}"/>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/button4"
+                    android:layout_width="90dp"
+                    android:layout_height="75dp"
+                    android:text="@{view_model.board.get(3)}"
+                    app:color="@{view_model.board.get(3)}"
+                    android:onTextChanged="@{() -> view_model.onChangeValue(3, view_model.turn)}"
+                    android:onClick="@{() -> view_model.onClick(3)}"/>
+
+                <Button
+                    android:id="@+id/button5"
+                    android:layout_width="90dp"
+                    android:layout_height="75dp"
+                    android:text="@{view_model.board.get(4)}"
+                    app:color="@{view_model.board.get(4)}"
+                    android:onTextChanged="@{() -> view_model.onChangeValue(4, view_model.turn)}"
+                    android:onClick="@{() -> view_model.onClick(4)}"/>
+
+                <Button
+                    android:id="@+id/button6"
+                    android:layout_width="90dp"
+                    android:layout_height="75dp"
+                    android:text="@{view_model.board.get(5)}"
+                    app:color="@{view_model.board.get(5)}"
+                    android:onTextChanged="@{() -> view_model.onChangeValue(5, view_model.turn)}"
+                    android:onClick="@{() -> view_model.onClick(5)}"/>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/button7"
+                    android:layout_width="90dp"
+                    android:layout_height="75dp"
+                    android:text="@{view_model.board.get(6)}"
+                    app:color="@{view_model.board.get(6)}"
+                    android:onTextChanged="@{() -> view_model.onChangeValue(6, view_model.turn)}"
+                    android:onClick="@{() -> view_model.onClick(6)}"/>
+
+                <Button
+                    android:id="@+id/button8"
+                    android:layout_width="90dp"
+                    android:layout_height="75dp"
+                    android:text="@{view_model.board.get(7)}"
+                    app:color="@{view_model.board.get(7)}"
+                    android:onTextChanged="@{() -> view_model.onChangeValue(7, view_model.turn)}"
+                    android:onClick="@{() -> view_model.onClick(7)}"/>
+
+                <Button
+                    android:id="@+id/button9"
+                    android:layout_width="90dp"
+                    android:layout_height="75dp"
+                    android:text="@{view_model.board.get(8)}"
+                    app:color="@{view_model.board.get(8)}"
+                    android:onTextChanged="@{() -> view_model.onChangeValue(8, view_model.turn)}"
+                    android:onClick="@{() -> view_model.onClick(8)}"/>
+
+            </TableRow>
+        </TableLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
